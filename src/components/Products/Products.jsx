@@ -1,22 +1,18 @@
-import React, { useState } from 'react'
-import productsData from '../data/product.json'
-import './Product.css'
+import { myProduct } from "../data/product";
 
-import imageFolder from '../../assets/black_shoes.png';
 // mapping product data
 const Products = () => {
-
   return (
-    <div className='products-container'>
-    {productsData.map(product =>
-    <div key={product.id} className='product'>
-        {/* <img src=`../../assets/green_dress.png` alt={product.name}/> */}
-        <img src={import(`../../assets/${product.image}`).default} />
-        <div className='product-name'>{product.name}</div>
-        <button className='yellow-button'>Add to Cart</button>
-    </div>)}
+    <div className="products-container">
+      {myProduct?.map((product, index) => (
+        <div key={index} className="product">
+          <img src={product?.image} alt={product?.image} />
+          <div className="product-name">{product?.name}</div>
+          <button className="yellow-button">Add to Cart</button>
+        </div>
+      ))}
     </div>
-  )
-}
+  );
+};
 
-export default Products
+export default Products;
