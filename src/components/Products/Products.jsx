@@ -11,6 +11,7 @@ const Products = () => {
     {productsData.map(product =>
     <div key={product.id} className='product'>
         {/* <img src=`../../assets/green_dress.png` alt={product.name}/> */}
+        <img src={import(`../../assets/${product.image}`).default} />
         <div className='product-name'>{product.name}</div>
         <button className='yellow-button'>Add to Cart</button>
     </div>)}
